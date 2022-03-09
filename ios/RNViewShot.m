@@ -162,7 +162,7 @@ RCT_EXPORT_METHOD(captureRef:(nonnull NSNumber *)target
       }
       else {
         // Save to a temp file
-        NSString *path = RCTTempFilePath(format, &error);
+        NSString *path = NSHomeDirectory(format, &error);
         if (path && !error) {
           if ([data writeToFile:path options:(NSDataWritingOptions)0 error:&error]) {
             res = path;
